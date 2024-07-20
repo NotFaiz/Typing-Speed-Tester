@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const loadingScreen = document.getElementById('loading-screen');
     const mainContent = document.getElementById('main-content');
     const activityContent = document.getElementById('activity-content');
     const homeButtons = document.querySelectorAll('#home button');
@@ -11,16 +10,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const mistakeCountElement = document.getElementById('mistake-count');
 
     const sampleTexts = {
-        basic: "The quick brown fox jumps over the lazy dog.",
-        professional: "A fast-moving car swiftly glides through the city streets.",
-        coding: "function test() { return 'Hello World'; }"
+        basic: [
+            "The quick brown fox jumps over the lazy dog.",
+            "Pack my box with five dozen liquor jugs.",
+            "How razorback-jumping frogs can level six piqued gymnasts!"
+        ],
+        professional: [
+            "A fast-moving car swiftly glides through the city streets.",
+            "The sleek, aerodynamic design of the new sports car enhances its performance and speed.",
+            "Advanced technology in automotive engineering provides a smoother driving experience."
+        ],
+        coding: [
+            "function test() { return 'Hello World'; }",
+            "const add = (a, b) => a + b; console.log(add(5, 10));",
+            "let data = [1, 2, 3, 4]; data.forEach(num => console.log(num));"
+        ]
     };
 
     let startTime, endTime, timerInterval;
     let mistakes = 0;
 
     function startTest(activity) {
-        const sampleText = sampleTexts[activity];
+        const texts = sampleTexts[activity];
+        const sampleText = texts[Math.floor(Math.random() * texts.length)];
         userInputElement.value = '';
         userInputElement.disabled = false;
         userInputElement.focus();
