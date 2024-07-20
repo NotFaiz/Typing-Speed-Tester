@@ -48,6 +48,10 @@ textarea {
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
     white-space: pre-wrap;
     overflow: auto;
+    -webkit-user-select: text; /* For disabling text suggestions on mobile */
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
 }
 
 textarea:focus {
@@ -100,6 +104,6 @@ button:disabled {
 }
 
 .unfinished {
-    color: #d32f2f; /* Red color for unfinished words */
+    color: #d32f2f; /* Brighter, more visible red color */
     font-weight: bold;
 }
