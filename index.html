@@ -7,20 +7,20 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Typing Speed Tester</h1>
-        <div class="text-container">
-            <p id="text-to-type">Click the button below to start typing!</p>
+    <div id="loading-screen">
+        <div class="loader">Loading...</div>
+    </div>
+    <div id="main-content" class="hidden">
+        <div id="home">
+            <h1>Welcome to Typing Speed Tester</h1>
+            <button id="basic-speed-test">Basic Speed Test</button>
+            <button id="professional-speed-test">Professional Speed Test</button>
+            <button id="coding-speed-test">Coding Speed Test</button>
+            <button id="credits">Credits</button>
         </div>
-        <textarea id="user-input" placeholder="Start typing here..." disabled></textarea>
-        <div class="buttons">
-            <button id="start-button">Start</button>
-            <button id="reset-button" disabled>Reset</button>
-        </div>
-        <p id="result"></p>
-        <p id="mistakes">Mistakes: <span id="mistake-count">0</span></p>
-        <div id="timer" class="hidden">
-            Time: <span id="time">0.00</span> seconds
+        <!-- Include content for each test/activity here -->
+        <div id="activity-content" class="hidden">
+            <!-- Content will be dynamically loaded here -->
         </div>
     </div>
     <script src="script.js"></script>
