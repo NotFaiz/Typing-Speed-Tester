@@ -99,5 +99,8 @@ document.addEventListener('DOMContentLoaded', () => {
     startButton.addEventListener('click', startTest);
     resetButton.addEventListener('click', resetTest);
     userInputElement.addEventListener('input', checkInput);
+
+    // Disable keyboard suggestions for better typing test experience
+    userInputElement.setAttribute('autocomplete', 'off');
+    userInputElement.setAttribute('spellcheck', 'false');
 });
-                
