@@ -9,7 +9,29 @@ body {
     overflow: hidden;
 }
 
-.container {
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.loader {
+    font-size: 2rem;
+    color: #00796b;
+}
+
+.hidden {
+    display: none;
+}
+
+#main-content {
     text-align: center;
     background: #ffffff;
     padding: 20px;
@@ -23,6 +45,32 @@ h1 {
     font-size: 1.8rem;
     color: #00796b;
     margin-bottom: 20px;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: #00796b;
+    color: #ffffff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 5px;
+}
+
+button:hover {
+    background-color: #004d40;
+    transform: scale(1.05);
+}
+
+button:disabled {
+    background-color: #b2dfdb;
+    cursor: not-allowed;
+}
+
+#activity-content {
+    display: none;
 }
 
 .text-container {
@@ -48,43 +96,11 @@ textarea {
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
     white-space: pre-wrap;
     overflow: auto;
-    -webkit-user-select: text; /* For disabling text suggestions on mobile */
-    -moz-user-select: text;
-    -ms-user-select: text;
-    user-select: text;
 }
 
 textarea:focus {
     border-color: #00796b;
     box-shadow: 0 0 8px rgba(0, 121, 107, 0.3);
-}
-
-.buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-
-button {
-    padding: 10px;
-    border: none;
-    border-radius: 8px;
-    background-color: #00796b;
-    color: #ffffff;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-button:hover {
-    background-color: #004d40;
-    transform: scale(1.05);
-}
-
-button:disabled {
-    background-color: #b2dfdb;
-    cursor: not-allowed;
 }
 
 #result, #mistakes {
@@ -97,10 +113,6 @@ button:disabled {
     font-size: 1rem;
     color: #00796b;
     margin-top: 10px;
-}
-
-.hidden {
-    display: none;
 }
 
 .unfinished {
