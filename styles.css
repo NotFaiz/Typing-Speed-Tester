@@ -33,6 +33,7 @@ h1 {
     padding: 10px;
     font-size: 1.1rem;
     word-wrap: break-word;
+    white-space: pre-wrap;
 }
 
 textarea {
@@ -45,6 +46,8 @@ textarea {
     font-size: 1rem;
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    white-space: pre-wrap;
+    overflow: auto;
 }
 
 textarea:focus {
@@ -80,9 +83,10 @@ button:disabled {
     cursor: not-allowed;
 }
 
-#result, #word-count, #character-count {
+#result, #mistakes {
     font-size: 1rem;
     color: #004d40;
+    margin-top: 10px;
 }
 
 #timer {
@@ -93,4 +97,9 @@ button:disabled {
 
 .hidden {
     display: none;
+}
+
+.unfinished {
+    color: #d32f2f; /* Red color for unfinished words */
+    font-weight: bold;
 }
