@@ -100,3 +100,4 @@ document.addEventListener('DOMContentLoaded', () => {
     resetButton.addEventListener('click', resetTest);
     userInputElement.addEventListener('input', checkInput);
 });
+                
