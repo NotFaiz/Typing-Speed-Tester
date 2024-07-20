@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const resultElement = document.getElementById('result');
     const timerElement = document.getElementById('timer');
     const timeElement = document.getElementById('time');
+    const wordCountElement = document.getElementById('words');
+    const characterCountElement = document.getElementById('characters');
 
     let startTime, endTime, timerInterval;
 
@@ -21,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         startTime = new Date();
         timerElement.classList.remove('hidden');
         timerInterval = setInterval(updateTimer, 100);
+        updateWordAndCharacterCount();
     }
 
     function resetTest() {
@@ -33,11 +36,21 @@ document.addEventListener('DOMContentLoaded', () => {
         timerElement.classList.add('hidden');
         clearInterval(timerInterval);
         timeElement.textContent = '0';
+        wordCountElement.textContent = '0';
+        characterCountElement.textContent = '0';
     }
 
     function updateTimer() {
         const elapsedTime = ((new Date() - startTime) / 1000).toFixed(2);
         timeElement.textContent = elapsedTime;
+    }
+
+    function updateWordAndCharacterCount() {
+        const userText = userInputElement.value.trim();
+        const words = userText.split(/\s+/).filter(word => word.length > 0).length;
+        const characters = userText.length;
+        wordCountElement.textContent = words;
+        characterCountElement.textContent = characters;
     }
 
     function calculateSpeed() {
@@ -58,10 +71,10 @@ document.addEventListener('DOMContentLoaded', () => {
             startButton.disabled = false;
             resetButton.disabled = false;
         }
+        updateWordAndCharacterCount();
     }
 
     startButton.addEventListener('click', startTest);
     resetButton.addEventListener('click', resetTest);
     userInputElement.addEventListener('input', checkInput);
 });
-
